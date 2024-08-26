@@ -6,9 +6,13 @@
 //
 
 import Foundation
-import BigInt
 import ASN1
 import Digest
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
+import BigInt //SwiftPM module name
+#endif
 
 public class RSAPublicKey: CustomStringConvertible {
 

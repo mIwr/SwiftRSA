@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftRSA",
+    platforms: [
+        .macOS(.v10_13), .macCatalyst(.v13), .iOS(.v11), .tvOS(.v11), .watchOS(.v4), .visionOS(.v1)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -13,14 +16,14 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.16.0"),
-        .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.4.0"),
-        .package(url: "https://github.com/leif-ibsen/Digest", from: "1.3.0"),
+        .package(url: "https://github.com/mIwr/BigInt", from: "1.19.2"),
+        .package(url: "https://github.com/mIwr/ASN1", from: "2.6.1"),
+        .package(url: "https://github.com/mIwr/Digest", from: "1.6.1"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(name: "SwiftRSA", dependencies: ["BigInt", "ASN1", "Digest"]),
+        .target(name: "SwiftRSA", dependencies: ["BigInt", "ASN1", "Digest"], resources: [.copy("PrivacyInfo.xcprivacy")]),
         .testTarget(name: "SwiftRSATests", dependencies: ["SwiftRSA"]),
     ]
 )

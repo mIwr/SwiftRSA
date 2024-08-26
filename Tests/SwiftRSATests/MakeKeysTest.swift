@@ -7,7 +7,11 @@
 
 import XCTest
 @testable import SwiftRSA
-import BigInt
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
+import BigInt //SwiftPM module name
+#endif
 
 class MakeKeysTest: XCTestCase {
 

@@ -7,8 +7,12 @@
 
 import XCTest
 @testable import SwiftRSA
-import BigInt
 import Digest
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
+import BigInt //SwiftPM module name
+#endif
 
 // Test vectors from Wycheproof - files
 //    rsa_pss_2048_sha1_mgf1_20_test.json

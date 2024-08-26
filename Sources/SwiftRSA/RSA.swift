@@ -6,8 +6,12 @@
 //
 
 import ASN1
-import BigInt
 import Digest
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
+import BigInt //SwiftPM module name
+#endif
 
 /// Unsigned 8 bit value
 public typealias Byte = UInt8
