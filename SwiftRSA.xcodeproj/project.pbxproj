@@ -16,7 +16,6 @@
 		8B6692A02C78B80A00F1F8C7 /* RSAPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6692992C78B80900F1F8C7 /* RSAPublicKey.swift */; };
 		8B6692A12C78B80A00F1F8C7 /* RSAPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66929A2C78B80900F1F8C7 /* RSAPrivateKey.swift */; };
 		8B6692A22C78B80A00F1F8C7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8B66929B2C78B80900F1F8C7 /* PrivacyInfo.xcprivacy */; };
-		8B6692A32C78B80A00F1F8C7 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66929C2C78B80900F1F8C7 /* Base64.swift */; };
 		8B6692B22C78B82C00F1F8C7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6692A72C78B82C00F1F8C7 /* Utilities.swift */; };
 		8B6692B32C78B82C00F1F8C7 /* SignatureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6692A82C78B82C00F1F8C7 /* SignatureTest.swift */; };
 		8B6692B42C78B82C00F1F8C7 /* EncryptPKCS1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6692A92C78B82C00F1F8C7 /* EncryptPKCS1Test.swift */; };
@@ -223,7 +222,6 @@
 		8B6692992C78B80900F1F8C7 /* RSAPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPublicKey.swift; sourceTree = "<group>"; };
 		8B66929A2C78B80900F1F8C7 /* RSAPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPrivateKey.swift; sourceTree = "<group>"; };
 		8B66929B2C78B80900F1F8C7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		8B66929C2C78B80900F1F8C7 /* Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
 		8B66929D2C78B80900F1F8C7 /* SwiftRSA.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SwiftRSA.docc; sourceTree = "<group>"; };
 		8B6692A72C78B82C00F1F8C7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8B6692A82C78B82C00F1F8C7 /* SignatureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureTest.swift; sourceTree = "<group>"; };
@@ -1114,7 +1112,6 @@
 				8B6692982C78B80900F1F8C7 /* RSA.swift */,
 				8B6692992C78B80900F1F8C7 /* RSAPublicKey.swift */,
 				8B66929A2C78B80900F1F8C7 /* RSAPrivateKey.swift */,
-				8B66929C2C78B80900F1F8C7 /* Base64.swift */,
 			);
 			path = SwiftRSA;
 			sourceTree = "<group>";
@@ -1265,7 +1262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6692A32C78B80A00F1F8C7 /* Base64.swift in Sources */,
 				8B66929F2C78B80A00F1F8C7 /* RSA.swift in Sources */,
 				8B6692A02C78B80A00F1F8C7 /* RSAPublicKey.swift in Sources */,
 				8B6692A12C78B80A00F1F8C7 /* RSAPrivateKey.swift in Sources */,
@@ -1425,7 +1421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1445,7 +1441,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 2.4.1;
+				MARKETING_VERSION = 2.5.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.swiftrsa;
@@ -1466,7 +1462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1486,7 +1482,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 2.4.1;
+				MARKETING_VERSION = 2.5.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.swiftrsa;
@@ -1589,7 +1585,7 @@
 			repositoryURL = "https://github.com/mIwr/Digest";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.1;
+				minimumVersion = 1.7.1;
 			};
 		};
 		8B150F682C7C69B6001FED2B /* XCRemoteSwiftPackageReference "ASN1" */ = {

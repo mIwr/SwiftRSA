@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftRSA"
-  spec.version      = "2.4.1"
+  spec.version      = "2.5.1"
   spec.summary      = "RSA Cryptography in Swift"
   spec.author       = { "Leif Ibsen" => "https://github.com/leif-ibsen" }
   spec.homepage     = "https://github.com/leif-ibsen/SwiftRSA"
