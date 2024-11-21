@@ -173,9 +173,16 @@ public class RSAPublicKey: CustomStringConvertible {
         }
         var EM = Bytes(repeating: 0, count: k)
         EM[1] = 2
+        #if targetEnvironment(simulator) || targetEnvironment(macCatalyst) || os(macOS) || os(iOS) || os(watchOS) || os(tvOS) || os(visionOS)
+        //Avaliable only on Apple platforms
         guard SecRandomCopyBytes(kSecRandomDefault, k - 3 - mLen, &EM[2]) == errSecSuccess else {
             fatalError("randomBytes failed")
         }
+        #else
+        for i in 2...k - 3 - mLen - 1 {
+            EM[i] = UInt8.random(in: UInt8.min...UInt8.max)
+        }
+        #endif
         for i in 2 ..< k - mLen - 1 {
             if EM[i] == 0 {
                 EM[i] = 1
@@ -240,9 +247,16 @@ public class RSAPublicKey: CustomStringConvertible {
         let PS = Bytes(repeating: 0, count: k - mLen - 2 * hLen - 2)
         let DB = lHash + PS + [1] + message
         var seed = Bytes(repeating: 0, count: hLen)
+        #if targetEnvironment(simulator) || targetEnvironment(macCatalyst) || os(macOS) || os(iOS) || os(watchOS) || os(tvOS) || os(visionOS)
+        //Avaliable only on Apple platforms
         guard SecRandomCopyBytes(kSecRandomDefault, hLen, &seed) == errSecSuccess else {
             fatalError("randomBytes failed")
         }
+        #else
+        for i in 0...hLen - 1 {
+            seed[i] = UInt8.random(in: UInt8.min...UInt8.max)
+        }
+        #endif
         let dbMask = KDF.MGF1(kind, seed, k - hLen - 1)
         var maskedDB = DB
         for i in 0 ..< maskedDB.count {

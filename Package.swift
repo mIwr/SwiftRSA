@@ -16,9 +16,9 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/mIwr/BigInt", from: "1.19.2"),
-        .package(url: "https://github.com/mIwr/ASN1", from: "2.6.1"),
-        .package(url: "https://github.com/mIwr/Digest", from: "1.7.1"),
+        .package(url: "https://github.com/mIwr/BigInt", from: "1.21.2"),
+        .package(url: "https://github.com/mIwr/ASN1", from: "2.7.2"),
+        .package(url: "https://github.com/mIwr/Digest", from: "1.10.2"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

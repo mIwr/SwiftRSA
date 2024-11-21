@@ -379,9 +379,16 @@ public class RSAPrivateKey: CustomStringConvertible {
         }
         let mHash = md.digest()
         var salt = Bytes(repeating: 0, count: hLen)
+        #if targetEnvironment(simulator) || targetEnvironment(macCatalyst) || os(macOS) || os(iOS) || os(watchOS) || os(tvOS) || os(visionOS)
+        //Avaliable only on Apple platforms
         guard SecRandomCopyBytes(kSecRandomDefault, hLen, &salt) == errSecSuccess else {
             fatalError("randomBytes failed")
         }
+        #else
+        for i in 0...hLen - 1 {
+            salt[i] = UInt8.random(in: UInt8.min...UInt8.max)
+        }
+        #endif
         let M1 = Bytes(repeating: 0, count: 8) + mHash + salt
         md.update(M1)
         let H = md.digest()
