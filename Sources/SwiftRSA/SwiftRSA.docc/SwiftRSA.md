@@ -53,7 +53,7 @@ To use SwiftRSA, in your project *Package.swift* file add a dependency like
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/mIwr/SwiftRSA", from: "2.5.2"),
+  .package(url: "https://github.com/mIwr/SwiftRSA", from: "2.6.1"),
 ]
 ```
 
@@ -61,9 +61,9 @@ SwiftRSA itself depends on the ASN1, BigInt and Digest packages
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.7.2"),
-  .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.21.2"),
-  .package(url: "https://github.com/leif-ibsen/Digest", from: "1.10.2"),
+  .package(url: "https://github.com/mIwr/ASN1", from: "2.7.2"),
+  .package(url: "https://github.com/mIwr/BigInt", from: "1.21.2"),
+  .package(url: "https://github.com/mIwr/Digest", from: "1.13.1"),
 ],
 ```
 
